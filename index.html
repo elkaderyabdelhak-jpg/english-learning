@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn English Morocco - 600 Lessons</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:linear-gradient(135deg,#00c853,#00b0ff,#7c4dff,#ff4081);background-size:300% 300%;animation:move 8s ease infinite;min-height:100vh;display:flex;justify-content:center;padding:20px}
+@keyframes move{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.phone{width:100%;max-width:420px;background:rgba(255,255,255,.25);backdrop-filter:blur(20px);border-radius:30px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.3);min-height:720px}
+h1{font-size:32px;color:#1a237e}
+.sub{color:#fff;font-weight:bold;margin:4px 0 18px}
+.topbar{display:flex;justify-content:space-between;align-items:center;color:#1a237e;font-weight:bold}
+.bar{height:16px;background:rgba(255,255,255,.6);border-radius:20px;overflow:hidden;margin-top:6px}
+.fill{height:100%;width:65%;background:linear-gradient(90deg,#00e676,#7c4dff);border-radius:20px}
+h2{color:#1a237e;margin:18px 0 12px;font-size:22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:rgba(255,255,255,.85);border-radius:18px;padding:18px 10px;text-align:center;cursor:pointer}
+.card .icon{font-size:38px}
+.card b{display:block;margin:10px 0 4px;color:#1a237e;font-size:17px}
+.card span{font-size:13px;color:#333}
+.list-card{background:#fff;border-radius:16px;padding:14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.list-card b{color:#1a237e}
+.list-card small{color:#666}
+.btn{width:100%;padding:16px;border:none;border-radius:30px;margin-top:16px;background:linear-gradient(90deg,#00c853,#7c4dff);color:#fff;font-size:20px;font-weight:bold;cursor:pointer}
+.btn2{background:#fff;color:#1a237e;border:2px solid #7c4dff;padding:12px;border-radius:20px;font-weight:bold;cursor:pointer;width:48%}
+.flex{display:flex;gap:10px;margin-top:12px}
+.lesson-box{background:#fff;border-radius:20px;padding:18px;text-align:center}
+.lesson-box .big{font-size:70px}
+.lesson-box h3{font-size:28px;color:#1a237e;margin:12px 0 6px}
+.back{cursor:pointer;color:#1a237e;font-weight:bold;margin-bottom:10px}
+.streak{text-align:center;margin-top:14px;color:#333}
+.hidden{display:none}
+input,select{width:100%;padding:12px;border-radius:12px;border:1px solid #ccc;margin-top:10px}
+.dash-card{background:#fff;border-radius:16px;padding:12px;margin-bottom:10px;display:flex;gap:10px;align-items:center}
+.stat{background:#fff;border-radius:16px;padding:14px;text-align:center}
+</style>
+</head>
+<body>
+<div class="phone">
+<div style="display:flex;justify-content:space-between;color:#fff"><span>9:41</span><span>📶 🔋</span></div>
+<div id="loginBox" style="text-align:center;padding:10px 0 20px">
+  <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px">
+    <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#00c853,#7c4dff);display:flex;align-items:center;justify-content:center;font-size:30px">📖</div>
+    <div style="text-align:left"><b style="font-size:26px;color:#fff;line-height:1.1">Learn English<br>Morocco 🇲🇦</b></div>
+  </div>
+  <p style="color:#fff;margin:12px 0 18px;font-size:14px">Welcome back! Please sign in to continue</p>
+  <div style="background:rgba(255,255,255,.75);border-radius:22px;padding:22px 18px;text-align:left">
+    <h2 style="text-align:center;color:#1a237e;font-size:26px;margin:0 0 18px">Sign In</h2>
+    <label style="font-size:13px">Email</label>
+    <div style="display:flex;align-items:center;background:#fff;border-radius:12px;padding:12px;margin:6px 0 14px"><span style="margin-right:8px">✉️</span><input id="loginEmail" type="email" placeholder="youremail@example.com" style="border:none;outline:none;width:100%;font-size:15px;margin:0;padding:0"></div>
+    <label style="font-size:13px">Password</label>
+    <div style="display:flex;align-items:center;background:#fff;border-radius:12px;padding:12px;margin:6px 0 14px"><span style="margin-right:8px">🔒</span><input id="loginPass" type="password" placeholder="••••••••••" style="border:none;outline:none;width:100%;font-size:15px;margin:0;padding:0"><span style="cursor:pointer" onclick="let p=document.getElementById('loginPass');p.type=p.type==='password'?'text':'password'">👁️</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:16px"><label><input type="checkbox" checked style="width:auto"> Remember me</label><a href="#" id="btnForgot" style="color:#5c6bc0;text-decoration:none">Forgot password?</a></div>
+    <button class="btn" id="btnLogin" style="margin:0">Log In</button>
+    <p id="loginStatus" style="font-size:12px;margin-top:8px;text-align:center;color:#d32f2f">كندخلو Firebase الحقيقي... تسنى 2 ثواني</p>
+  </div>
+  <p style="color:#fff;margin:16px 0 10px;font-size:14px">Or continue with</p>
+  <div style="display:flex;gap:10px"><button id="btnGoogle" style="flex:1;background:#fff;border:none;border-radius:14px;padding:13px;font-weight:bold;font-size:16px;cursor:pointer">G Google</button><button id="btnApple" style="flex:1;background:#fff;border:none;border-radius:14px;padding:13px;font-weight:bold;font-size:16px;cursor:pointer"> Apple</button></div>
+  <p style="color:#fff;margin-top:18px;font-size:13px">Don't have an account? <b id="btnSignup" style="cursor:pointer;text-decoration:underline">Sign up</b></p>
+</div>
+<div id="home" class="hidden">
+<h1 id="helloTitle">Hello,</h1>
+<div class="sub">Level Beginner • <span id="xp">120</span> XP • <span id="totalLessonsText">600</span> lessons total</div>
+<div class="topbar"><span>Progress</span><span id="progText">65%</span></div>
+<div class="bar"><div class="fill" id="progFill"></div></div>
+<h2>Home • <span id="homeLessonsText">600</span> Lessons</h2>
+<div class="grid" id="categories"></div>
+<button class="btn" id="btnContinue">▶️ Continue Lesson</button>
+<div class="streak">Daily Streak • 5 days 🔥</div>
+</div>
+<div id="category" class="hidden"><div class="back" id="backHome1">← Back</div><h1 id="catTitle">At Home</h1><div class="sub" id="catSub">60 lessons</div><div id="lessonsList"></div></div>
+<div id="lesson" class="hidden">
+<div class="back" id="backCat1">← Back</div>
+<h2 id="lessonTitle">Lesson 1 • House</h2>
+<div class="lesson-box"><div class="big" id="lessonIcon">🏠</div><h3 id="lessonWord">House = Dar</h3><p id="lessonDesc">This is my house.</p>
+<div class="flex"><button class="btn2" id="btnSpeak">🔊 Pronounce</button><button class="btn2" id="btnNext">Next →</button></div>
+<input id="answer" placeholder="Write the word in English...">
+<button class="btn" id="btnCheck">Check Answer +10 XP</button><p id="feedback" style="margin-top:10px;font-weight:bold"></p></div>
+<button class="btn" id="btnContinue2">Continue Lesson</button>
+</div>
+<div id="finish" class="hidden" style="text-align:center"><h1>Level Fluent 🎉</h1><div style="font-size:80px">🏆</div><h2>600 Lessons Completed!</h2><p id="finishText"></p><button class="btn" id="btnHomeFinish">Back Home</button></div>
+<div id="dashboard" class="hidden">
+<div class="back" id="backHomeDash">← Back to App</div><h1>Dashboard 👑</h1>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div class="stat"><h1 id="statUsers">0</h1><span>واحد دخل</span></div>
+<div class="stat"><h1 id="statLessons">600</h1><span>درس</span></div>
+<div class="stat"><h1 id="statDone">0</h1><span>درس تكمل</span></div>
+<div class="stat"><h1 id="statXP">0</h1><span>XP</span></div>
+</div>
+<h2>➕ زيد درس جديد</h2>
+<div style="background:#fff;border-radius:16px;padding:14px">
+<select id="newCat"><option value="0">At Home 🏠</option><option value="1">At Market 🛒</option><option value="2">Family 👨‍👩‍👧</option><option value="3">School 🎒</option><option value="4">Travel ✈️</option><option value="5">Food 🍲</option><option value="6">Jobs 💼</option><option value="7">Health 💊</option><option value="8">Daily Life ☀️</option><option value="9">Speaking 🎤</option></select>
+<input id="newWord" placeholder="الكلمة بالإنجليزية - مثال: Garden"><input id="newDar" placeholder="بالدارجة - مثال: جردة"><input id="newDesc" placeholder="مثال جملة">
+<button class="btn" id="btnAddLesson">➕ زيد الدرس</button><p id="addMsg"></p></div>
+<h2>👥 الناس اللي دخلو</h2><div id="dashList"></div>
+<button class="btn" id="btnHomeDash2">Back Home</button>
+</div>
+</div>
+
+<script>
+// ===== 1. التطبيق - كود عادي كيخدم ديما =====
+var cats=[
+ {name:"At Home",icon:"🏠",words:["House","Kitchen","Bedroom","Bathroom","Living Room","Door","Window","Table","Chair","Bed","Lamp","Sofa","TV","Fridge","Stove","Shower","Mirror","Towel","Key","Phone Charger"]},
+ {name:"At Market",icon:"🛒",words:["Bread","Milk","Tomato","Cheese","Tea","Coffee","Sugar","Oil","Eggs","Meat","Chicken","Fish","Apple","Banana","Orange","Potato","Onion","Carrot","Clothes","Shoes"]},
+ {name:"Family",icon:"👨‍👩‍👧",words:["Mother","Father","Brother","Sister","Baby","Grandmother","Grandfather","Uncle","Aunt","Cousin","Son","Daughter","Husband","Wife","Family","Friend","Boy","Girl","Man","Woman"]},
+ {name:"School",icon:"🎒",words:["School","Teacher","Student","Book","Pen","Pencil","Bag","Desk","Chair","Classroom","Lesson","Homework","Exam","Question","Answer","Read","Write","Listen","Speak","Learn"]},
+ {name:"Travel",icon:"✈️",words:["Taxi","Bus","Train","Plane","Car","Hotel","Airport","Station","Ticket","Passport","Road","Street","City","Village","Map","Left","Right","Near","Far","Here"]},
+ {name:"Food",icon:"🍲",words:["Breakfast","Lunch","Dinner","Water","Juice","Soup","Salad","Rice","Couscous","Tagine","Hungry","Thirsty","Delicious","Sweet","Salty","Hot","Cold","Eat","Drink","Cook"]},
+ {name:"Jobs",icon:"💼",words:["Teacher","Doctor","Farmer","Driver","Cook","Seller","Police","Worker","Engineer","Nurse","Job","Work","Money","Office","Shop","Hospital","Farm","School","Morning","Evening"]},
+ {name:"Health",icon:"💊",words:["Doctor","Pharmacy","Medicine","Hospital","Head","Eye","Hand","Leg","Tooth","Stomach","Sick","Pain","Fever","Cough","Cold","Healthy","Strong","Tired","Sleep","Rest"]},
+ {name:"Daily Life",icon:"☀️",words:["Morning","Afternoon","Evening","Night","Today","Tomorrow","Yesterday","Week","Month","Year","Wake up","Shower","Dress","Eat","Go","Come","Play","Study","Work","Sleep"]},
+ {name:"Speaking",icon:"🎤",words:["Hello","Good morning","How are you?","I am fine","Thank you","Please","Sorry","Yes","No","My name is","Nice to meet you","Where are you from?","I am from Azrou","How old are you?","Do you speak English?","Yes, a little","I don't understand","Please speak slowly","Can you help me?","I like English"]}
+];
+var lessons=[];
+cats.forEach(function(c,ci){ for(let i=0;i<60;i++){ let w; if(i<20) w=c.words[i]; else if(i<30) w="Phrase "+(i-19)+" in "+c.name; else if(i<40) w="Sentence "+(i-29)+" in "+c.name; else if(i<50) w="Dialogue "+(i-39)+" in "+c.name; else w="Quiz "+(i-49)+" in "+c.name; lessons.push({cat:ci,catName:c.name,num:i+1,global:ci*60+i+1,word:w,icon:c.icon,desc:"Example: This is "+w+"."}); }});
+var extraLessons = JSON.parse(localStorage.getItem('extra_lessons')||"[]");
+extraLessons.forEach(l=>lessons.push(l));
+var xp=parseInt(localStorage.getItem('xp')||120), done=parseInt(localStorage.getItem('done')||0);
+var currentCat=0, currentLessonIndex=0, userName="Friend", userGmail="";
+function refreshTotal(){ document.getElementById('totalLessonsText').innerText=lessons.length; document.getElementById('homeLessonsText').innerText=lessons.length; }
+document.getElementById('xp').innerText=xp; refreshTotal();
+window.afterLogin = function(){ document.getElementById('loginBox').style.display="none"; document.getElementById('home').classList.remove('hidden'); document.getElementById('helloTitle').innerText="Hello "+userName+","; };
+window.saveLocalUser = function(){ localStorage.setItem('xp',xp); localStorage.setItem('done',done); localStorage.setItem('learner_name',userName); localStorage.setItem('learner_gmail',userGmail); };
+window.setUser = function(name, gmail){ userName=name; userGmail=gmail; };
+// البوطونات ديال الدروس - خدامين ديما بلا Firebase
+function renderCats(){ document.getElementById('categories').innerHTML=cats.map((c,i)=>{let count=lessons.filter(l=>l.cat===i).length; return <div class="card" data-cat="${i}"><div class="icon">${c.icon}</div><b>${c.name}</b><span>${count} lessons</span></div>}).join(''); document.querySelectorAll('.card').forEach(card=>{ card.onclick=()=>openCategory(parseInt(card.dataset.cat)); }); }
+function showHome(){ document.getElementById('home').classList.remove('hidden'); ['category','lesson','finish','dashboard'].forEach(id=>document.getElementById(id).classList.add('hidden')); window.location.hash=""; }
+function openCategory(i){ currentCat=i; document.getElementById('home').classList.add('hidden'); document.getElementById('category').classList.remove('hidden'); document.getElementById('lesson').classList.add('hidden'); document.getElementById('catTitle').innerText=cats[i].name; let list=lessons.filter(l=>l.cat===i); document.getElementById('catSub').innerText=list.length+" lessons"; document.getElementById('lessonsList').innerHTML=list.map(l=>{let gi=lessons.indexOf(l); return <div class="list-card" data-gi="${gi}"><div><b>Lesson ${l.num} • ${l.word}</b><br><small>${l.catName} • ${gi+1}/${lessons.length}</small></div><span>▶️ 10 XP</span></div>}).join(''); document.querySelectorAll('.list-card').forEach(el=>el.onclick=()=>openLesson(parseInt(el.dataset.gi))); }
+function openLesson(gi){ currentLessonIndex=gi; let l=lessons[gi]; currentCat=l.cat; document.getElementById('category').classList.add('hidden'); document.getElementById('lesson').classList.remove('hidden'); document.getElementById('lessonTitle').innerText=Lesson ${l.num} • ${l.word}; document.getElementById('lessonIcon').innerText=l.icon; document.getElementById('lessonWord').innerText=l.word+(l.dar?" = "+l.dar:""); document.getElementById('lessonDesc').innerText=l.desc; document.getElementById('feedback').innerText=""; document.getElementById('answer').value=""; }
+document.getElementById('btnContinue').onclick=()=>openCategory(0);
+document.getElementById('btnContinue2').onclick=()=>openCategory(currentCat);
+document.getElementById('backHome1').onclick=()=>showHome();
+document.getElementById('backCat1').onclick=()=>openCategory(currentCat);
+document.getElementById('btnSpeak').onclick=()=>{ let u=new SpeechSynthesisUtterance(lessons[currentLessonIndex].word); u.lang='en-US'; speechSynthesis.speak(u); };
+document.getElementById('btnNext').onclick=()=>{ if(currentLessonIndex+1>=lessons.length){ document.getElementById('lesson').classList.add('hidden'); document.getElementById('finish').classList.remove('hidden'); document.getElementById('finishText').innerText="You did it "+userName+"!"; return; } openLesson(currentLessonIndex+1); };
+document.getElementById('btnCheck').onclick=()=>{ let v=document.getElementById('answer').value.trim(); if(!v){ document.getElementById('feedback').innerText="✍️ Write something!"; return; } xp+=10; done++; document.getElementById('xp').innerText=xp; let p=Math.min(100,Math.round((done/lessons.length)*100)); if(p<65) p=65; document.getElementById('progText').innerText=p+"%"; document.getElementById('progFill').style.width=p+"%"; document.getElementById('feedback').innerText="✅ Good job "+userName+"! +10 XP"; window.saveLocalUser(); if(window.saveToFirebase) window.saveToFirebase(); };
+document.getElementById('btnHomeFinish').onclick=()=>showHome();
+document.getElementById('backHomeDash').onclick=()=>showHome();
+document.getElementById('btnHomeDash2').onclick=()=>showHome();
+document.getElementById('btnApple').onclick = ()=>{ alert("Apple - غادي نزيدوه من بعد، دابا خدام Google و Gmail"); };
+// Dashboard - كيقرا من local + Firebase
+window.openDashboard = function(users){
+  document.getElementById('home').classList.add('hidden'); document.getElementById('dashboard').classList.remove('hidden');
+  users = users || JSON.parse(localStorage.getItem('all_users')||"[]");
+  document.getElementById('statUsers').innerText=users.length;
+  document.getElementById('statLessons').innerText=lessons.length;
+  document.getElementById('statDone').innerText=users.reduce((a,u)=>a+(u.done||0),0);
+  document.getElementById('statXP').innerText=users.reduce((a,u)=>a+(u.xp||0),0);
+  document.getElementById('dashList').innerHTML=users.map(u=><div class="dash-card"><div style="width:42px;height:42px;border-radius:50%;background:#7c4dff;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold">${(u.name||'?').charAt(0)}</div><div style="flex:1"><b>${u.name}</b><br><small>${u.gmail}</small><br><small>XP: ${u.xp} • Done: ${u.done}</small></div></div>).join('')||"<p>مازال حتى واحد</p>";
+};
+document.getElementById('btnAddLesson').onclick=()=>{
+  let cat=parseInt(document.getElementById('newCat').value); let word=document.getElementById('newWord').value.trim(); let dar=document.getElementById('newDar').value.trim(); let desc=document.getElementById('newDesc').value.trim();
+  if(!word){ document.getElementById('addMsg').innerText="⚠️ كتب الكلمة"; return; }
+  let nl={cat:cat,catName:cats[cat].name,num:lessons.filter(l=>l.cat===cat).length+1,global:lessons.length+1,word:word,icon:cats[cat].icon,desc:desc||("Example: This is "+word),dar:dar};
+  lessons.push(nl); extraLessons.push(nl); localStorage.setItem('extra_lessons',JSON.stringify(extraLessons));
+  document.getElementById('addMsg').innerText="✅ تزاد: "+word;
+  refreshTotal(); renderCats(); if(window.loadDashboard) window.loadDashboard(); else window.openDashboard();
+};
+if(window.location.hash==="#dashboard"){ document.getElementById('loginBox').style.display="none"; document.getElementById('home').classList.add('hidden'); document.getElementById('dashboard').classList.remove('hidden'); }
+renderCats();
+// إلا Firebase مازال ماخدمش بعد 3 ثواني، بين ليه
+setTimeout(()=>{
+  if(!window.firebaseReady){
+    document.getElementById('loginStatus').innerText="⚠️ Firebase مازال ماخدمش - تأكد من Authorized domains و Email/Password Enabled - جرب Actualiser";
+    document.getElementById('loginStatus').style.color="orange";
+  }
+}, 3000);
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = { apiKey: "AIzaSyC2Rm7t59D7whGK_ff5928nbIEvrL5bGA", authDomain: "learn-english-morocco.firebaseapp.com", projectId: "learn-english-morocco", storageBucket: "learn-english-morocco.firebasestorage.app", messagingSenderId: "306088785225", appId: "1:306088785225:web:d1256f724ff43742179698" };
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+window.firebaseReady = true;
+document.getElementById('loginStatus').innerText = "Firebase خدام ✅ - كتب Gmail حقيقي ديالك";
+document.getElementById('loginStatus').style.color = "green";
+
+window.saveToFirebase = async ()=>{
+  try{
+    let gmail = localStorage.getItem('learner_gmail'); if(!gmail || !auth.currentUser) return;
+    await setDoc(doc(db,"users", auth.currentUser.uid), {name: localStorage.getItem('learner_name'), gmail: gmail, xp: parseInt(localStorage.getItem('xp')||0), done: parseInt(localStorage.getItem('done')||0), lastSeen: new Date().toISOString()}, {merge:true});
+  }catch(e){}
+};
+
+// ===== Log In حقيقي =====
+document.getElementById('btnLogin').onclick = async ()=>{
+  let email=document.getElementById('loginEmail').value.trim();
+  let pass=document.getElementById('loginPass').value.trim();
+  if(!email||!pass){ document.getElementById('loginStatus').innerText="كتب Email و Password"; return; }
+  document.getElementById('loginStatus').innerText="كندخلوك... كنتأكدو من Gmail ديالك";
+  try{
+    let res = await signInWithEmailAndPassword(auth, email, pass);
+    window.setUser(res.user.displayName || email.split("@")[0], res.user.email);
+    window.saveLocalUser(); window.afterLogin(); window.saveToFirebase();
+  }catch(e){
+    if(e.code==="auth/invalid-credential" || e.code==="auth/user-not-found") document.getElementById('loginStatus').innerText="❌ هاد الحساب ماكاينش، برك على Sign up باش تسجل";
+    else if(e.code==="auth/wrong-password") document.getElementById('loginStatus').innerText="❌ كلمة السر غالطة";
+    else if(e.code==="auth/invalid-email") document.getElementById('loginStatus').innerText="❌ Email ماشي صحيح";
+    else document.getElementById('loginStatus').innerText="❌ "+e.message;
+  }
+};
+// ===== Sign Up حقيقي =====
+document.getElementById('btnSignup').onclick = async ()=>{
+  let email=document.getElementById('loginEmail').value.trim();
+  let pass=document.getElementById('loginPass').value.trim();
+  if(!email||!pass){ alert("كتب Email و Password باش تسجل"); return; }
+  if(pass.length<6){ alert("Password خاصو 6 حروف على الأقل"); return; }
+  try{
+    let res = await createUserWithEmailAndPassword(auth, email, pass);
+    let name = prompt("شنو سميتك؟ مثال: Abdelhak");
+    window.setUser(name||email.split("@")[0], email);
+    window.saveLocalUser(); window.afterLogin(); window.saveToFirebase();
+    document.getElementById('loginStatus').innerText="✅ تسجلتي فـ Firebase!";
+  }catch(e){ if(e.code==="auth/email-already-in-use") alert("هاد Email مسجل من قبل، برك على Log In"); else alert("❌ "+e.message); }
+};
+// ===== Google حقيقي - Redirect =====
+document.getElementById('btnGoogle').onclick = async ()=>{
+  document.getElementById('loginStatus').innerText="كنحولك لـ Google... تسنى";
+  try{ await signInWithRedirect(auth, provider); }catch(e){ document.getElementById('loginStatus').innerText="❌ "+e.message; }
+};
+getRedirectResult(auth).then(async (res)=>{
+  if(res && res.user){
+    window.setUser(res.user.displayName||"Friend", res.user.email);
+    window.saveLocalUser(); window.afterLogin(); window.saveToFirebase();
+  }
+}).catch((e)=>{ if(e.code && e.code!=="auth/no-redirect-operation") document.getElementById('loginStatus').innerText="❌ Google: "+e.message; });
+document.getElementById('btnForgot').onclick = async (e)=>{ e.preventDefault(); let email=document.getElementById('loginEmail').value.trim(); if(!email){ alert("كتب Email ديالك"); return; } try{ await sendPasswordResetEmail(auth,email); alert("✅ صيفطنا ليك رابط فـ "+email); }catch(err){ alert("❌ "+err.message); } };
+onAuthStateChanged(auth, async (user)=>{
+  if(user){
+    window.setUser(user.displayName||user.email.split("@")[0], user.email);
+    try{ let snap=await getDoc(doc(db,"users",user.uid)); if(snap.exists()){ let d=snap.data(); localStorage.setItem('xp', d.xp||120); localStorage.setItem('done', d.done||0); document.getElementById('xp').innerText=d.xp||120; } }catch(e){}
+    window.saveLocalUser(); window.afterLogin();
+  }
+});
+window.loadDashboard = async ()=>{
+  try{ let q=await getDocs(collection(db,"users")); let users=[]; q.forEach(d=>users.push(d.data())); window.openDashboard(users); }catch(e){ window.openDashboard(); }
+};
+</script>
+</body>
+</html>
